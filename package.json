@@ -1,0 +1,15 @@
+{
+  "name": "serverfirsapp",
+  "version": "1.0.0",
+  "description": "Este proyecto sierve como script de servidor para el proyecto de aplicacion movil con react native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nad gardez",
+  "license": "ISC",
+  "dependencies": {
+    "formidable": "^1.2.2",
+    "mysql": "^2.18.1"
+  }
+}
