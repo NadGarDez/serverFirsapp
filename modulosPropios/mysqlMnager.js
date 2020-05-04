@@ -4,7 +4,7 @@ mysql.connection({
 	host : 'localhost',
 	database : 'firsapp',
 	user : 'root',
-	password : 'superiranad',
+	password : '',
 });
 
 
