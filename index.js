@@ -1,40 +1,72 @@
 var a = require('http');
 
+var url= require('url');
+
 var server=a.createServer(
 
 	function(req,res){
 
+		var busqueda= url.parse(req.url);
+		busqueda = "."+busqueda.pathname;
 
-		var busqueda = req.pathname;
+		console.log(busqueda);
+		
 		var modulo;
 
 		switch(busqueda){
 
 
-			case '/register':
+			case './registrar':
 
 				modulo = require('./modulosPropios/register.js');
 
 				modulo.init(req,res,
 					function(data){
-						res.send(data);
+						res.writeHead(200,{'content-type':'text/html'});
+						res.write(data);
+						return res.end();
 					}
 
 				);
 
 
-
 			break;
 
-			case '/login':
+			case './login':
 
 				modulo = require('./modulosPropios/login.js');
 
 			break;
 
-			case '/config':
+			case './config':
 
 				modulo = require('./modulosPropios/config.js');
+
+			break;
+
+			case './prueba':
+
+				
+
+				res.writeHead(200,{'content-type':'text/html'});
+				res.write('hola mundo');
+				return res.end();
+
+			break;
+
+			case './isUnique':
+
+
+				modulo = require('./modulosPropios/isUnique.js');
+
+				modulo.init(req,res,
+					function(data){
+						res.writeHead(200,{'content-type':'text/html'});
+						res.write(data);
+						return res.end();
+					}
+
+				);
 
 			break;
 
@@ -47,4 +79,4 @@ var server=a.createServer(
 );
 
 
-server.listen(7070);
+server.listen(4000);

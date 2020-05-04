@@ -7,7 +7,7 @@ var devolver=1;
 
 function callbackPost(post,file){
 
-	var consulta = "SELECT count(correo) FROM usuarios WHERE CORREO="+seguridad.scape(post['correo'])+" AND contracena = "+seguridad.escape(post['contracena']);
+	var consulta = "SELECT count(correo) FROM usuarios WHERE CORREO="+seguridad.scape(post['correo'])
 
 
 	
@@ -21,14 +21,14 @@ function procesarDatos(resultados,fila){
 
 	if(resultados.length<1){
 
-		data ={'validado':false}
+		data ={'validado':true}
 		devolver(data);
 
 	}
 
 	else{
 
-		data = {'validado': true}
+		data = {'validado': false}
 		devolver(data);
 
 	}
