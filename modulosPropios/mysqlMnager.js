@@ -1,10 +1,11 @@
+
 var mysql = require('mysql');
 
-mysql.connection({
+var coneccion=mysql.createConnection({
 	host : 'localhost',
 	database : 'firsapp',
 	user : 'root',
-	password : '',
+	password : 'superiranad',
 });
 
 

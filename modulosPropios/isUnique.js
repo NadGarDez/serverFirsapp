@@ -1,5 +1,5 @@
 var post = require('./manejadorPost.js');
-var mysql = require('./mysqlManager.js');
+var mysql = require('./mysqlMnager.js');
 var seguridad = require('mysql');
 
 
@@ -7,29 +7,31 @@ var devolver=1;
 
 function callbackPost(post,file){
 
-	var consulta = "SELECT count(correo) FROM usuarios WHERE CORREO="+seguridad.scape(post['correo'])
+	var consulta = "SELECT count(correo) unico FROM usuario WHERE correo="+seguridad.escape(post['correo'])
 
 
 	
 
-	mysql.init(consulta,procesarDatos,Cerror);
+	mysql.consultar(consulta,procesarDatos,Cerror);
 
 }
 
 
 function procesarDatos(resultados,fila){
+ 	console.log(resultados);
+	console.log(resultados[0].unico+" este es el resultado ");
 
-	if(resultados.length<1){
+	if(resultados[0].unico==0){
 
 		data ={'validado':true}
-		devolver(data);
+		devolver(JSON.stringify(data));
 
 	}
 
 	else{
 
 		data = {'validado': false}
-		devolver(data);
+		devolver(JSON.stringify(data));
 
 	}
 
