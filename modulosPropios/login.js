@@ -1,5 +1,5 @@
 var post = require('./manejadorPost.js');
-var mysql = require('./mysqlManager.js');
+var mysql = require('./mysqlMnager.js');
 var seguridad = require('mysql');
 
 
@@ -12,7 +12,7 @@ function callbackPost(post,file){
 
 	
 
-	mysql.init(consulta,procesarDatos,Cerror);
+	mysql.consultar(consulta,procesarDatos,Cerror);
 
 }
 
