@@ -7,7 +7,7 @@ var devolver=1;
 
 function callbackPost(post,file){
 
-	var consulta = "INSERT INTO usuarios (correo,contracena) VALUES ("+seguridad.scape(post['correo'])+","+seguridad.escape(post['contracena']+")");
+	var consulta = "INSERT INTO usuarios (correo,contracena) VALUES ("+seguridad.escape(post['correo'])+","+seguridad.escape(post['contracena']+")");
 
 	mysql.init(consulta,procesarDatos,Cerror);
 

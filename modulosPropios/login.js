@@ -7,7 +7,7 @@ var devolver=1;
 
 function callbackPost(post,file){
 
-	var consulta = "SELECT count(correo) FROM usuarios WHERE CORREO="+seguridad.scape(post['correo'])+" AND contracena = "+seguridad.escape(post['contracena']);
+	var consulta = "SELECT count(correo) existe FROM usuarios WHERE CORREO="+seguridad.escape(post['correo'])+" AND contracena = "+seguridad.escape(post['contracena']);
 
 
 	
@@ -19,17 +19,17 @@ function callbackPost(post,file){
 
 function procesarDatos(resultados,fila){
 
-	if(resultados.length<1){
+	if(resultados[0].existe==0){
 
 		data ={'validado':false}
-		devolver(data);
+		devolver(JSON.stringify(data));
 
 	}
 
 	else{
 
 		data = {'validado': true}
-		devolver(data);
+		devolver(JSON.stringify(data));
 
 	}
 
