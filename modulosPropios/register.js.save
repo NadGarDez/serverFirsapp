@@ -1,3 +1,4 @@
+
 var post = require('./manejadorPost.js');
 var mysql = require('./mysqlMnager.js');
 var seguridad = require('mysql');
@@ -6,11 +7,11 @@ var seguridad = require('mysql');
 var devolver=1;
 
 function callbackPost(post,file){
-
-	var consulta = "SELECT count(correo) unico FROM usuario WHERE correo='"+post['correo']+"'";
-
-
-	
+	console.log(post);
+<<<<<<< HEAD
+	var consulta = "INSERT INTO usuarios (correo,contracena) VALUES ("+seguridad.escape(post['correo'])+","+seguridad.escape(post['contracena']+")");
+=======
+	var consulta = "INSERT INTO usuario (correo,contracena) VALUES ("+seguridad.escape(post['correo'])+","+seguridad.escape(post['contraafea4965a2815ab9f257ee0293f6017d35abf63
 
 	mysql.consultar(consulta,procesarDatos,Cerror);
 
@@ -18,22 +19,8 @@ function callbackPost(post,file){
 
 
 function procesarDatos(resultados,fila){
- 	console.log(resultados);
-	console.log(resultados[0].unico+" este es el resultado ");
 
-	if(resultados[0].unico==0){
-
-		data ={'validado':true}
-		devolver(JSON.stringify(data));
-
-	}
-
-	else{
-
-		data = {'validado': false}
-		devolver(JSON.stringify(data));
-
-	}
+	devolver(resultados);
 
 }
 
@@ -48,7 +35,7 @@ function Cerror(error){
 
 function init(req,res,print){
 
-	console.log(devolver);
+	console.log('entramos s a registro');
 
 	devolver =null;
 
