@@ -15,8 +15,11 @@ function callbackPost(post,file){
 
 
 function procesarDatos(resultados,fila){
-
-	devolver(resultados);
+	console.log(resultados);
+	if(resultados.OkPacket.affectedRows==1){
+		devolver(JSON.stringify({'registrado':true}));
+	}
+//	devolver(resultados);
 
 }
 
