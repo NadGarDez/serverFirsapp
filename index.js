@@ -36,6 +36,15 @@ var server=a.createServer(
 
 				modulo = require('./modulosPropios/login.js');
 
+				modulo.init(req,res,
+					function(data){
+						res.writeHead(200,{'content-type':'text/html'});
+						res.write(data);
+						return res.end();
+					}
+
+				);
+
 			break;
 
 			case './config':
