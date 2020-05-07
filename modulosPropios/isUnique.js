@@ -7,7 +7,7 @@ var devolver=1;
 
 function callbackPost(post,file){
 
-	var consulta = "SELECT count(correo) unico FROM usuario WHERE correo="+seguridad.escape(post['correo'])
+	var consulta = "SELECT count(correo) unico FROM usuario WHERE correo='"+post['correo']+"'";
 
 
 	
