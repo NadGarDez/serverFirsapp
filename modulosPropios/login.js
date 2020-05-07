@@ -1,5 +1,5 @@
 var post = require('./manejadorPost.js');
-var mysql = require('./mysqlManager.js');
+var mysql = require('./mysqlMnager.js');
 var seguridad = require('mysql');
 
 
