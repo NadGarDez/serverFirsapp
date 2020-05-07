@@ -12,7 +12,7 @@ function callbackPost(post,file){
 
 	
 
-	mysql.init(consulta,procesarDatos,Cerror);
+	mysql.consultar(consulta,procesarDatos,Cerror);
 
 }
 

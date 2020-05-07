@@ -1,15 +1,16 @@
+
 var post = require('./manejadorPost.js');
-var mysql = require('./mysqlManager.js');
+var mysql = require('./mysqlMnager.js');
 var seguridad = require('mysql');
 
 
 var devolver=1;
 
 function callbackPost(post,file){
-
+	console.log(post);
 	var consulta = "INSERT INTO usuarios (correo,contracena) VALUES ("+seguridad.escape(post['correo'])+","+seguridad.escape(post['contracena']+")");
 
-	mysql.init(consulta,procesarDatos,Cerror);
+	mysql.consultar(consulta,procesarDatos,Cerror);
 
 }
 
@@ -31,7 +32,7 @@ function Cerror(error){
 
 function init(req,res,print){
 
-	console.log(devolver);
+	console.log('entramos s a registro');
 
 	devolver =null;
 
