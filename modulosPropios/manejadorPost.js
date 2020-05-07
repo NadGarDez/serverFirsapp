@@ -4,8 +4,7 @@ var objeto="";
 
 
 function init(peticion,needed,callback){
-	console.log(peticion);
-	console.log(needed);	
+	
 	
 	var subidos = new formi.IncomingForm();
 	

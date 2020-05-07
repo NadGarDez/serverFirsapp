@@ -18,8 +18,8 @@ function callbackPost(post,file){
 
 
 function procesarDatos(resultados,fila){
-
-	devolver(resultados);
+	console.log(resultados);
+//	devolver(resultados);
 
 }
 
