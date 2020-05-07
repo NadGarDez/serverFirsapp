@@ -7,7 +7,7 @@ var devolver=1;
 
 function callbackPost(post,file){
 
-	var consulta = "SELECT count(correo) existe FROM usuarios WHERE CORREO='"+post['correo']+"' AND contracena = '"+post['contracena']+"'";
+	var consulta = "SELECT count(correo) existe FROM usuario WHERE CORREO='"+post['correo']+"' AND contracena = '"+post['contracena']+"'";
 
 
 	
