@@ -79,6 +79,50 @@ var server=a.createServer(
 
 			break;
 
+			case './file':
+
+				modulo = require('./modulosPropios/fileManager.js');
+
+				modulo.init(url,
+
+					function(data,mime){
+
+						es.writeHead(200,{'content-type':mime});
+						res.write(data);
+						return res.end();
+
+					}
+
+				);
+
+			break;
+
+
+			case './upload':
+
+			break;
+
+
+			case './getUser':
+
+				modulo = require('./modulosPropios/getUser.js');
+
+				modulo.init(url,
+
+					function(data){
+
+						es.writeHead(200,{'content-type':'text/html'});
+						res.write(data);
+						return res.end();
+
+					}
+
+				);
+
+
+
+			break;
+
 
 		}
 
