@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "formidable": "^1.2.2",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.19",
     "mysql": "^2.18.1"
   }
 }
