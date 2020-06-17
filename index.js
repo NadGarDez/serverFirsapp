@@ -100,6 +100,26 @@ var server=a.createServer(
 
 			case './upload':
 
+				modulo= require('./modulosPropios/manejadorPost2.js');
+
+				modulo.init(req,3)
+				.then(
+
+					function(a,b){
+
+
+						console.log(a);
+
+						console.log(b);
+
+					}
+
+				)
+				.catch(
+					function(error){
+						console.log(error)
+					}
+				)
 			break;
 
 
