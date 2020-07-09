@@ -14,19 +14,16 @@ function init(option,callback){
 
 			const init = async () => {
 			  const db = await connection(); // obtenemos la conexión
-
+			  /*
 			  await db.collection('user').insertOne({ // insertamos un usuario
 			    name: 'devsin.site'
 			  });
-			  
+			  */
 
-			 db.collection('user').find({name:'devsin.site'},
+			 await db.collection('user').find({},{_id:0}).forEach(function(document){
+			 	console.log(document);
 
-			 	function(err, result){
-			 		console.log(result);
-
-			 	}
-			 );
+			 });
 
 			 // callback(JSON.stringify(resultado));
 

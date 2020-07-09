@@ -2,6 +2,19 @@ var a = require('http');
 
 var url= require('url');
 
+je = require('./modulosPropios/videoChat.js');
+seciones= new Array();
+
+je.init2()
+.then(
+	function(data){
+
+		console.log(data);
+		seciones.push(data);
+	}
+)
+
+
 var server=a.createServer(
 
 	function(req,res){
@@ -148,6 +161,38 @@ var server=a.createServer(
 			break;
 
 			case './mongo':
+
+
+			break;
+
+			case './videoChat':
+				console.log(seciones);
+
+				/*
+				modulo = require('./modulosPropios/videoChat.js');
+				console.log(modulo);
+
+				modulo.init(
+
+
+					function(data){
+
+						res.writeHead(200,{'content-type':'text/html'});
+						res.write(data);
+						return res.end();
+
+					}
+
+
+
+
+				);
+				*/
+				res.writeHead(200,{'content-type':'text/html'});
+				res.write(JSON.stringify(seciones[0]));
+				return res.end();
+
+
 
 
 			break;
