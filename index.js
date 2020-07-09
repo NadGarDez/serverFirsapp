@@ -2,6 +2,19 @@ var a = require('http');
 
 var url= require('url');
 
+je = require('./modulosPropios/videoChat.js');
+seciones= new Array();
+
+je.init2()
+.then(
+	function(data){
+
+		console.log(data);
+		seciones.push(data);
+	}
+)
+
+
 var server=a.createServer(
 
 	function(req,res){
@@ -67,7 +80,7 @@ var server=a.createServer(
 
 
 				modulo = require('./modulosPropios/isUnique.js');
-
+				
 				modulo.init(req,res,
 					function(data){
 						res.writeHead(200,{'content-type':'text/html'});
@@ -100,6 +113,26 @@ var server=a.createServer(
 
 			case './upload':
 
+				modulo= require('./modulosPropios/manejadorPost2.js');
+
+				modulo.init(req,3)
+				.then(
+
+					function(a,b){
+
+
+						console.log(a);
+
+						console.log(b);
+
+					}
+
+				)
+				.catch(
+					function(error){
+						console.log(error)
+					}
+				)
 			break;
 
 
@@ -111,13 +144,74 @@ var server=a.createServer(
 
 					function(data){
 
-						es.writeHead(200,{'content-type':'text/html'});
+						res.writeHead(200,{'content-type':'text/html'});
 						res.write(data);
 						return res.end();
 
 					}
 
 				);
+
+
+
+			break;
+
+			case './mongoose':
+
+				modulo = require('./modulosPropios/mongoExperimento.js');
+				console.log(modulo);
+
+				modulo.init('nativo',
+
+
+					function(data){
+
+						res.writeHead(200,{'content-type':'text/html'});
+						res.write(data);
+						return res.end();
+
+					}
+
+
+
+
+				);
+
+
+			break;
+
+			case './mongo':
+
+
+			break;
+
+			case './videoChat':
+				console.log(seciones);
+
+				/*
+				modulo = require('./modulosPropios/videoChat.js');
+				console.log(modulo);
+
+				modulo.init(
+
+
+					function(data){
+
+						res.writeHead(200,{'content-type':'text/html'});
+						res.write(data);
+						return res.end();
+
+					}
+
+
+
+
+				);
+				*/
+				res.writeHead(200,{'content-type':'text/html'});
+				res.write(JSON.stringify(seciones[0]));
+				return res.end();
+
 
 
 
