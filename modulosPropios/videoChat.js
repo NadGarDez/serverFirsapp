@@ -63,6 +63,7 @@ function init2(){
 					else{
 
 						obj={
+							'open':opentok,
 
 							'apiKey':apiKey,
 							'session':session.sessionId

@@ -196,7 +196,7 @@ var server=a.createServer(
 
 			    // Generate a token.
 			    credenciales=seciones[0];
-			    token = open.generateToken(seciones[0].session, tokenOptions);
+			    token = seciones[0].open.generateToken(seciones[0].session, tokenOptions);
 			    credenciales.token=token;
 			    console.log(token);
 
