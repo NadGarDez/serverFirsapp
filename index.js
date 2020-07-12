@@ -1,5 +1,5 @@
 var a = require('http');
-
+open = require('opentok');
 var url= require('url');
 
 je = require('./modulosPropios/videoChat.js');
@@ -19,7 +19,8 @@ var server=a.createServer(
 
 	function(req,res){
 
-		var busqueda= url.parse(req.url);
+		var busqueda= url.parse(req.url,true);
+		query=busqueda.query;
 		busqueda = "."+busqueda.pathname;
 
 		console.log(busqueda);
@@ -187,6 +188,17 @@ var server=a.createServer(
 
 			case './videoChat':
 				console.log(seciones);
+				console.log(query.user);
+
+				var tokenOptions = {};
+			    tokenOptions.role = "publisher";
+			    tokenOptions.data = "username"+query.user;
+
+			    // Generate a token.
+			    credenciales=seciones[0];
+			    token = open.generateToken(seciones[0].session, tokenOptions);
+			    credenciales.token=token;
+			    console.log(token);
 
 				/*
 				modulo = require('./modulosPropios/videoChat.js');
@@ -209,7 +221,7 @@ var server=a.createServer(
 				);
 				*/
 				res.writeHead(200,{'content-type':'text/html'});
-				res.write(JSON.stringify(seciones[0]));
+				res.write(JSON.stringify(credenciales));
 				return res.end();
 
 
