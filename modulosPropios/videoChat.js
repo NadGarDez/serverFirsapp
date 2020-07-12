@@ -30,7 +30,9 @@ function init(callback){
 			}
 
 			else{
+				
 				a(session.sessionId);
+
 				
 			}
 		}
@@ -63,7 +65,6 @@ function init2(){
 						obj={
 
 							'apiKey':apiKey,
-							'apiSecret':apiSecret,
 							'session':session.sessionId
 						}
 						resolve(obj);
