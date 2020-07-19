@@ -17,7 +17,7 @@ je.init2()
 
 var server=a.createServer(
 
-	function(req,res){
+	function(req,res){/////
 
 		var busqueda= url.parse(req.url,true);
 		query=busqueda.query;
@@ -195,7 +195,13 @@ var server=a.createServer(
 			    tokenOptions.data = "username"+query.user;
 
 			    // Generate a token.
-			    credenciales=seciones[0];
+			    credenciales={
+			    	'apiKey':seciones[0].apiKey;
+					'session':seciones[0].session;
+
+
+			    }
+			    
 			    token = seciones[0].open.generateToken(seciones[0].session, tokenOptions);
 			    credenciales.token=token;
 			    console.log(token);
