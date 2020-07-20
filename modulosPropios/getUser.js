@@ -10,6 +10,7 @@ function callbackPost(post,file){
 	var consulta = "SELECT * FROM usuario WHERE id="+post['id'];
 
 	mysql.consultar(consulta,procesarDatos,Cerror);
+	
 
 }
 
@@ -41,6 +42,22 @@ function init(req,res,print){
 
 	post.init(req,1,callbackPost);
 
+
+}
+
+async function init2(req,res,print){
+
+	dataPost= await post.init2(req,1);
+
+	console.log(dataPost);
+
+	var consulta = "SELECT * FROM usuario WHERE id="+dataPost.campos['id'];
+
+	mysqlResult= await mysql.consultar2(consulta);
+
+	print(JSON.stringify(resultados[0]));
+
+	console.log(mysqlResult);
 
 }
 

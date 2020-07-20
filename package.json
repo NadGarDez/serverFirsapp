@@ -4,7 +4,7 @@
   "description": "Este proyecto sierve como script de servidor para el proyecto de aplicacion movil con react native",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "nad gardez",
   "license": "ISC",
@@ -14,5 +14,8 @@
     "mongoose": "^5.9.19",
     "mysql": "^2.18.1",
     "opentok": "^2.10.0"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
   }
 }
