@@ -1,5 +1,5 @@
 modulo = require('./modulosPropios/getUser.js');
-var mysql = require('./mysqlMnager.js');
+var mysql = require('./modulosPropios/mysqlMnager.js');
 
 test('probar consulta mysql', () => {
 	var consulta = "SELECT * FROM usuario WHERE id=4";
