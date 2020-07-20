@@ -7,7 +7,7 @@ var devolver=1;
 
 function callbackPost(post,file){
 
-	var consulta = "SELECT count(correo) existe FROM usuario WHERE CORREO='"+post['correo']+"' AND contracena = '"+post['contracena']+"'";
+	var consulta = "SELECT id,roll FROM usuario WHERE CORREO='"+post['correo']+"' AND contracena = '"+post['contracena']+"'";
 
 
 	
@@ -18,6 +18,10 @@ function callbackPost(post,file){
 
 
 function procesarDatos(resultados,fila){
+
+	console.log(resultados[0]);
+	devolver(JSON.stringify(resultados[0]));
+	/*
 
 	if(resultados[0].existe==0){
 
@@ -32,7 +36,7 @@ function procesarDatos(resultados,fila){
 		devolver(JSON.stringify(data));
 
 	}
-
+*/
 }
 
 function Cerror(error){

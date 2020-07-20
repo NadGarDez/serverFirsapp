@@ -196,13 +196,20 @@ var server=a.createServer(
 
 			    // Generate a token.
 			    credenciales={
+<<<<<<< HEAD
 			    	'apiKey':seciones[0].apiKey,
 					'session':seciones[0].session
 
 
 			    }
 			   // credenciales.open="";
+=======
+			    	'apiKey':seciones[0].apiKey;
+					'session':seciones[0].session;
+
+			    }
 			    
+>>>>>>> d9db0966f79f2ac2810681ea81fb0a3a90d3189a
 			    token = seciones[0].open.generateToken(seciones[0].session, tokenOptions);
 			    credenciales.token=token;
 			    console.log(token);
