@@ -5,10 +5,11 @@ var seguridad = require('mysql');
 
 var devolver=1;
 
-function callbackPost(post,file){
+function callbackPost(post,file,func){
 	console.log(post);
 	var consulta = "SELECT * FROM usuario WHERE id="+post['id'];
 
+	//mysql.consultar(consulta,procesarDatos,Cerror);
 	mysql.consultar(consulta,procesarDatos,Cerror);
 
 }
