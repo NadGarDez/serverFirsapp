@@ -48,4 +48,78 @@ function init(peticion,needed,callback){
 	
 }
 
+
+function init2(peticion,needed){
+	
+	return new Promise(
+		(resolve,reject)=>{
+			var subidos = new formi.IncomingForm();
+			
+			subidos.parse(peticion,	
+				function(error, campos, archivos){
+					//operaciones con con los arhivos
+
+					if(error){
+
+						reject(error);
+					}
+					else{
+
+						switch(needed){
+
+							case 1:
+
+								obj={
+									'campos':campos,
+									'archivos':null
+								}
+
+								resolve(obj);
+
+							break;
+
+
+							case 2:
+
+								obj={
+									'campos':null,
+									'archivos':archivos
+								}
+
+								resolve(obj);
+								
+							break;
+
+
+							case 3:
+
+								obj={
+									'campos':campos,
+									'archivos':archivos
+								}
+
+								resolve(obj);
+								
+							break;
+
+
+
+						}
+
+
+					}
+
+					 
+				}
+			
+			);
+		}
+	);
+	
+	
+	
+	
+}
+
 exports.init= init;
+exports.init2=init2;
