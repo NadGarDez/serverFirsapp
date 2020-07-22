@@ -63,3 +63,4 @@ async function init2(req,res,print){
 
 
 exports.init= init;
+exports.init2= init2;
