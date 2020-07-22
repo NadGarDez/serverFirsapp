@@ -98,7 +98,7 @@ function ini(url,option,headers,data,method,formateResponse,callback,callbakErro
 		console.log('yo soy fetch.ini');
 
 }
-
+//ssss
 exports.default= ini;
 
 
