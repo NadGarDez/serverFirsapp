@@ -64,7 +64,16 @@ async function init2(req,res,print){
 
 	var consulta = "SELECT * FROM usuario WHERE id="+dataPost.campos['id'];
 
-	mysqlResult= await mysql.consultar2(consulta);
+	try {
+
+		mysqlResult= await mysql.consultar2(consulta);
+	}
+
+	catch(error){
+
+		console.log(error);
+	}
+	
 
 	print(JSON.stringify(mysqlResult[0]));
 

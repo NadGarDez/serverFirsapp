@@ -13,6 +13,7 @@
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.19",
     "mysql": "^2.18.1",
+    "node-fetch": "^2.6.0",
     "opentok": "^2.10.0"
   },
   "devDependencies": {
