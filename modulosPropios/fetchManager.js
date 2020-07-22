@@ -99,6 +99,6 @@ function ini(url,option,headers,data,method,formateResponse,callback,callbakErro
 
 }
 //ssss
-exports.default= ini;
+exports.ini= ini;
 
 
