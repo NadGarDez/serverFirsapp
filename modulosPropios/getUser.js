@@ -66,7 +66,7 @@ async function init2(req,res,print){
 
 	mysqlResult= await mysql.consultar2(consulta);
 
-	print(JSON.stringify(resultados[0]));
+	print(JSON.stringify(mysqlResult[0]));
 
 	console.log(mysqlResult);
 
