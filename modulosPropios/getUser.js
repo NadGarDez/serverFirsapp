@@ -47,7 +47,18 @@ function init(req,res,print){
 
 async function init2(req,res,print){
 
-	dataPost= await post.init2(req,1);
+	try {
+
+		dataPost= await post.init2(req,1);
+
+	}
+	catch(error){
+
+		console.log(error);
+
+	}
+
+	
 
 	console.log(dataPost);
 
