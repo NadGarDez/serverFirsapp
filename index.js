@@ -141,7 +141,7 @@ var server=a.createServer(
 
 				modulo = require('./modulosPropios/getUser.js');
 
-				modulo.init2(url,
+				modulo.init2(req,res,
 
 					function(data){
 
