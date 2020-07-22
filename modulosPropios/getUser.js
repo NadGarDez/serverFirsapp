@@ -76,7 +76,7 @@ async function init2(req,res,print){
 	}
 	
 
-	print(JSON.stringify(mysqlResult));
+	print(JSON.stringify(mysqlResult.resultados));
 
 	console.log(mysqlResult);
 
