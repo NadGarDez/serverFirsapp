@@ -1,6 +1,7 @@
 modulo = require('./modulosPropios/getUser.js');
 var mysql = require('./modulosPropios/mysqlMnager.js');
 superFetch= require('./modulosPropios/fetchManager.js');
+var url= require('url');
 
 test('probar consulta mysql', () => {
 	var consulta = "SELECT * FROM usuario WHERE id=4";
