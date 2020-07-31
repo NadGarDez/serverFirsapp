@@ -94,7 +94,8 @@ var server=a.createServer(
 			break;
 
 			case './file':
-
+                console.log(query);
+                url = "./uploads/"+query.archivo;
 				modulo = require('./modulosPropios/fileManager.js');
 
 				modulo.init(url,

@@ -18,10 +18,12 @@ function init(url,callback){
 
 
 			if(error){
-				console.log('el archivo no existe')
+				console.log(error):
 			}
 			
 			else{
+
+				console.log(data);
 
 				var corte = url.split('.');
 
