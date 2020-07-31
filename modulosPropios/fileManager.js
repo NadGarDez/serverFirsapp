@@ -1,24 +1,18 @@
 
 var fs = require('fs');
 
-const mime = {
-   'html' : 'text/html',
-   'css'  : 'text/css',
-   'jpg'  : 'image/jpg',
-   'ico'  : 'image/x-icon',
-   'mp3'  :	'audio/mpeg3',
-   'mp4'  : 'video/mp4'
-};
+
 
 function init(url,callback){
 
+	console.log(url);
 	fs.readFile(url,
 
 		function(error,data){
 
 
 			if(error){
-				console.log(error):
+				console.log(error);
 			}
 			
 			else{
@@ -46,5 +40,68 @@ function init(url,callback){
 
 }
 
+async function init2(url){
+
+	mimex = {
+	   'html' : 'text/html',
+	   'css'  : 'text/css',
+	   'jpg'  : 'image/jpg',
+	   'ico'  : 'image/x-icon',
+	   'mp3'  :	'audio/mpeg3',
+	   'mp4'  : 'video/mp4',
+	   'png' : 'image/png'
+	};
+
+	//console.log(this);
+	return new Promise(
+		(resolve,reject)=>{
+			console.log(url);
+			fs.readFile(url,
+
+				function(error,data){
+
+
+					if(error){
+						reject(error);
+					}
+					
+					else{
+
+						console.log(this.mimex);
+
+						var corte = url.split('.');
+
+						var extension = corte[corte.length-1];
+
+						var mime = mimex[extension];
+
+						resolvedor= {'data':data,'mime':mime}
+
+						resolve(resolvedor);
+
+
+					}
+
+
+				}
+
+
+			);
+
+
+
+		}
+
+
+	);
+
+	
+
+
+
+}
+
 
 exports.init = init;
+
+exports.init2 = init2;

@@ -1,7 +1,9 @@
 modulo = require('./modulosPropios/getUser.js');
+//file= require('/modulosPropios/fileManager.js');
 var mysql = require('./modulosPropios/mysqlMnager.js');
 superFetch= require('./modulosPropios/fetchManager.js');
 var url= require('url');
+
 
 test('probar consulta mysql', () => {
 	var consulta = "SELECT * FROM usuario WHERE id=4";
@@ -14,6 +16,7 @@ test('probar consulta mysql', () => {
 	
 	
 });////////////
+
 
 
 test('probar get user',
@@ -83,3 +86,29 @@ test('probar get user',
 	}
 
 );
+/*
+
+test('test de file',
+
+	async ()=>{
+
+		url = "./uploads/noImage.png";
+
+
+				file = require('./modulosPropios/fileManager.js');
+
+				test = await file.init2(url);
+				console.log(Buffer.isBuffer(test.data));
+
+
+				expect(test.data).not.toBeUndefined();
+				expect(test.mime).not.toBeUndefined();
+				expect(Buffer.isBuffer(test.data)).toBeTruthy();
+				expect(test.mime).toBe('image/png');
+				
+
+				
+
+	}
+
+);*/
