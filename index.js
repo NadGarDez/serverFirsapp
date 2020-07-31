@@ -98,17 +98,18 @@ var server=a.createServer(
                 url = "./uploads/"+query.archivo;
 				modulo = require('./modulosPropios/fileManager.js');
 
-				modulo.init(url,
+				modulo.init2(url).
+				then(
+					(data)=>{
 
-					function(data,mime){
-
-						es.writeHead(200,{'content-type':mime});
-						res.write(data);
+						es.writeHead(200,{'content-type':data.mime});
+						res.write(data.data);
 						return res.end();
 
 					}
-
 				);
+
+
 
 			break;
 
