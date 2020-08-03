@@ -5,6 +5,16 @@ var fs = require('fs');
 
 function init(url,callback){
 
+	mimex = {
+	   'html' : 'text/html',
+	   'css'  : 'text/css',
+	   'jpg'  : 'image/jpg',
+	   'ico'  : 'image/x-icon',
+	   'mp3'  :	'audio/mpeg3',
+	   'mp4'  : 'video/mp4',
+	   'png' : 'image/png'
+	};
+
 	console.log(url);
 	fs.readFile(url,
 

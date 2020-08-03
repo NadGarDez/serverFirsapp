@@ -102,7 +102,7 @@ var server=a.createServer(
 				then(
 					(data)=>{
 
-						es.writeHead(200,{'content-type':data.mime});
+						res.writeHead(200,{'content-type':data.mime});
 						res.write(data.data);
 						return res.end();
 
@@ -136,6 +136,10 @@ var server=a.createServer(
 						console.log(error)
 					}
 				)
+
+				res.writeHead(200,{'content-type':'text/html'});
+						res.write('hola');
+						return res.end();
 			break;
 
 
