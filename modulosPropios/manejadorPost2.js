@@ -41,9 +41,9 @@ function init(peticion,needed){
 
 
 							case 2:
-
+									ob ={campos,archivos}
 								
-									resolve(null,archivos);
+									resolve(ob);
 
 								
 								
@@ -84,4 +84,86 @@ function init(peticion,needed){
 
 
 
+
+function async init2(peticion,needed){
+
+	var subidos = new formi.IncomingForm();
+
+
+	return new Promise(
+		async function(resolve,reject){
+
+			subidos.parse(peticion,	
+				function(error, campos, archivos){
+					//operaciones con con los arhivos
+
+
+					if(error){
+
+						reject(error);
+
+
+					}
+
+					else{
+
+						switch(needed){
+
+							case 1:
+								
+
+									resolve(campos,null);
+
+
+								
+
+								
+
+							break;
+
+
+							case 2:
+									ob ={campos,archivos}
+								
+									resolve(ob);
+
+								
+								
+								
+							break;
+
+
+							case 3:
+
+								
+
+									resolve(campos,archivos);
+
+								
+								
+								
+							break;
+
+
+
+						}
+
+					}
+			
+			 
+				}
+	
+			);
+
+		}
+
+
+
+	);
+
+
+}
+
+
+exports.init2= init2;
 exports.init= init;

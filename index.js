@@ -17,7 +17,7 @@ je.init2()
 
 var server=a.createServer(
 
-	function(req,res){/////
+	aysnc function(req,res){/////
 
 		var busqueda= url.parse(req.url,true);
 		query=busqueda.query;
@@ -64,6 +64,17 @@ var server=a.createServer(
 			case './config':
 
 				modulo = require('./modulosPropios/config.js');
+
+				
+
+				var data = await modulo.init(req);
+
+				res.writeHead(200,{'content-type':'text/html'});
+				res.write(data);
+				return res.end();
+
+
+				
 
 			break;
 
