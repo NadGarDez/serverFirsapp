@@ -31,8 +31,9 @@ async function  init (req){
 
 			fs.renameSync(dataPost.archivos.avatar.path, dirImage);
 */
+			console.log(dataPost);
 
-			mover(dataPost.archivos.avatar.name,dataPost.archivos.avatar.path);
+			mover(dataPost.archivos.nuevaFoto.name,dataPost.archivos.nuevaFoto.path);
 
 			console.log(dataPost);
 
