@@ -6,7 +6,7 @@ var seguridad = require('mysql');
 var fs = require('fs');
 
 
-function async init (req){
+async function  init (req){
 
 	return new Promise(
 		async (resolve,reject)=>{
@@ -32,7 +32,7 @@ function async init (req){
 			fs.renameSync(dataPost.archivos.avatar.path, dirImage);
 */
 
-			mover(dataPost.archivos.avatar.name,dataPost.archivos.avatar.path;);
+			mover(dataPost.archivos.avatar.name,dataPost.archivos.avatar.path);
 
 			console.log(dataPost);
 

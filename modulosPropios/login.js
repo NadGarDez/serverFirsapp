@@ -85,7 +85,7 @@ async function init(req,res,print){
 
 	console.log(dataPost);
 
-	var consulta = "SELECT id,roll FROM usuario WHERE CORREO='"+dataPost.campos['correo']+"' AND contracena = '"+dataPost['contracena']+"'";
+	var consulta = "SELECT id,roll FROM usuario WHERE CORREO='"+dataPost.campos['correo']+"' AND contracena = '"+dataPost.campos['contracena']+"'";
 
 	try {
 
@@ -107,7 +107,7 @@ async function init(req,res,print){
 
 	else{
 		data={
-			'validado':false,
+			'validado':true,
 			'resultados':mysqlResult.resultados[0]
 
 		}

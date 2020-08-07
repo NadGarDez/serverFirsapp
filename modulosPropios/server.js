@@ -9,7 +9,7 @@ function servir(){
 
 	var server=a.createServer(
 
-		aysnc function(req,res){/////
+		async function(req,res){/////
 
 			var busqueda= url.parse(req.url,true);
 			query=busqueda.query;
@@ -247,6 +247,8 @@ function servir(){
 
 
 			}
+
+
 
 		}
 
