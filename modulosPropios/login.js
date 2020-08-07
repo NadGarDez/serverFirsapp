@@ -19,8 +19,24 @@ function callbackPost(post,file){
 
 function procesarDatos(resultados,fila){
 
-	console.log(resultados[0]);
-	devolver(JSON.stringify(resultados[0]));
+	if(resultados.length==0){
+		data={
+			'validado':false,
+		}
+
+	}
+
+	else{
+		data={
+			'validado':false,
+			'resultados':resultados[0]
+
+		}
+
+	}
+
+	console.log(data);
+	devolver(JSON.stringify(data));
 	/*
 
 	if(resultados[0].existe==0){
@@ -48,7 +64,7 @@ function Cerror(error){
 
 
 
-function init(req,res,print){
+async function init(req,res,print){
 
 	console.log(devolver);
 
@@ -56,7 +72,51 @@ function init(req,res,print){
 
 	devolver = print;
 
-	post.init(req,1,callbackPost);
+	try {
+
+		dataPost= await post.init2(req,1);
+
+	}
+	catch(error){
+
+		console.log(error);
+
+	}
+
+	console.log(dataPost);
+
+	var consulta = "SELECT id,roll FROM usuario WHERE CORREO='"+dataPost.campos['correo']+"' AND contracena = '"+dataPost['contracena']+"'";
+
+	try {
+
+		mysqlResult= await mysql.consultar2(consulta);
+		console.log(mysqlResult);
+	}
+
+	catch(error){
+
+		console.log(error);
+	}
+
+	if(mysqlResult.resultados.length==0){
+		data={
+			'validado':false,
+		}
+
+	}
+
+	else{
+		data={
+			'validado':false,
+			'resultados':mysqlResult.resultados[0]
+
+		}
+
+	}
+
+	console.log(data);
+	devolver(JSON.stringify(data));
+	
 
 
 }
