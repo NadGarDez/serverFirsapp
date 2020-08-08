@@ -33,17 +33,17 @@ async function  init (req){
 */
 			console.log(dataPost);
 
-			mover(dataPost.archivos.nuevaFoto.name,dataPost.archivos.nuevaFoto.path);
+			var dirImage = mover(dataPost.archivos.fotoNueva.name,dataPost.archivos.fotoNueva.path);
 
 			console.log(dataPost);
 
-			var mys = consulta(dataPost.campos.nombrePila,dataPost.campos.nombrePila,dirImage,dataPost.campos.id);
+			var mys = consulta(dataPost.campos.nombrePila,dataPost.campos.contracenaNueva,dirImage,dataPost.campos.id);
 
 
 
 			
 
-			resolve(mys);
+			resolve(JSON.stringify(mys));
 
 
 		}
@@ -63,12 +63,12 @@ async function  init (req){
 
 function mover(name,path){
 
-	var aleatoirio= new Date().getTime();//codigo para numero aleatorio
+	var aleatorio= new Date().getTime();//codigo para numero aleatorio
 	var dirImage = "./uploads/"aleatorio+name;
 
 	fs.renameSync(path, dirImage);
 
-
+	return dirImage;
 
 
 }
