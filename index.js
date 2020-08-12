@@ -253,6 +253,13 @@ var server=a.createServer(
 
 			break;
 
+			case 'listPsi':
+
+
+				
+
+			break;
+
 
 		}
 
