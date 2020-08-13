@@ -253,10 +253,18 @@ var server=a.createServer(
 
 			break;
 
-			case 'listPsi':
+			case './listPsi':
 
+				modulo = require('./modulosPropios/listPsi.js');
 
 				
+
+				var data = await modulo.init(req);
+
+				res.writeHead(200,{'content-type':'text/html'});
+				res.write(data);
+				return res.end();
+
 
 			break;
 
