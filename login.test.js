@@ -2,6 +2,7 @@ var mysql = require('./modulosPropios/mysqlMnager.js');
 superFetch= require('./modulosPropios/fetchManager.js');
 
 servidor= require('./modulosPropios/server.js');
+/*
 
 servidor.servir();
 
@@ -97,3 +98,10 @@ test(
 );
 
 
+*/
+
+test('hola',()=>{
+	var hola=true;
+
+	expect(hola).toBeTruthy();
+});

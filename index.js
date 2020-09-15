@@ -268,6 +268,86 @@ var server=a.createServer(
 
 			break;
 
+			case './agregarEspacio':
+
+				preModulo = require('./modulosPropios/espacios.js');
+
+				modulo = new preModulo.init(req);
+				
+
+				var data = await modulo.accion();
+				
+
+				res.writeHead(200,{'content-type':'text/html'});
+				res.write(data);
+				return res.end();
+
+			break;
+
+			case './eliminarEspacio':
+
+				preModulo = require('./modulosPropios/espacios.js');
+
+				modulo = new preModulo.init(req);
+				
+
+				var data = await modulo.accion();
+
+				res.writeHead(200,{'content-type':'text/html'});
+				res.write(data);
+				return res.end();	
+
+			break;
+
+			case './mostrarEspacios':
+
+				preModulo = require('./modulosPropios/espacios.js');
+
+				modulo = new preModulo.init(req);
+				
+
+				var data = await modulo.accion();
+				
+
+				res.writeHead(200,{'content-type':'text/html'});
+				res.write(data);
+				return res.end();
+
+
+			break;
+
+			case './bloquear':
+
+				preModulo = require('./modulosPropios/espacios.js');
+
+				modulo = new preModulo.init(req);
+				
+
+				var data = await modulo.accion();
+				
+
+				res.writeHead(200,{'content-type':'text/html'});
+				res.write(data);
+				return res.end();
+
+			break;
+
+			case './agregarPasciente':
+
+				preModulo = require('./modulosPropios/espacios.js');
+
+				modulo = new preModulo.init(req);
+				
+
+				var data = await modulo.accion();
+				
+
+				res.writeHead(200,{'content-type':'text/html'});
+				res.write(data);
+				return res.end();
+
+			break;
+
 
 		}
 
