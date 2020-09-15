@@ -11,7 +11,7 @@ test('test class',
 
 				var hola = await file.ini;
 				
-				console.log(hola);
+				console.log(typeof hola);
 
 				expect(hola).not.toBeUndefined();
 

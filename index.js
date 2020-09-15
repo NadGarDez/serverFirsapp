@@ -272,7 +272,7 @@ var server=a.createServer(
 
 				preModulo = require('./modulosPropios/espacios.js');
 
-				modulo = new preModulo.init(req);
+				modulo = new preModulo.ini(req);
 				
 
 				var data = await modulo.accion();

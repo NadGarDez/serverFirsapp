@@ -24,7 +24,7 @@ class espacios extends padre.class{
 
 						case 'ingresar':
 
-							var consulta = `INSERT INTO citas (psicologo,horaInicio,horaFin,fecha,duracion) values (${this.campos.psicologo},${this.campos.time},${this.campos.timeFin},${this.campos.date},1)`;
+							var consulta = `INSERT INTO citas (titulo,descripcion,precio,psicologo,horaInicio,horaFin,fecha,duracion) values (${this.campos.titulo},${this.campos.descripcion},${this.campos.precio},${this.campos.psicologo},${this.campos.time},${this.campos.timeFin},${this.campos.date},1)`;
 
 							var resultados = await this.consulta(consulta);
 
@@ -52,7 +52,7 @@ class espacios extends padre.class{
 
 							var consulta = `UPDATE citas SET (block = 1) WHERE id=${this.campos.id}`;
 
-							var resultados = await this.consulta.(consulta);
+							var resultados = await this.consulta(consulta);
 
 						break;
 
@@ -60,7 +60,7 @@ class espacios extends padre.class{
 
 							var consulta = `UPDATE citas SET (pasciente = ${this.campos.pasciente}, pagado=1) WHERE id=${this.campos.id}`;
 
-							var resultados = await this.consulta.(consulta);
+							var resultados = await this.consulta(consulta);
 
 
 						break;
